@@ -9,6 +9,10 @@ package com.tw.academy.basic.$7_long_method;
  */
 public class OrderReceipt {
     private Order o;
+    final double SALES_TAX_RATE = 0.1d;
+    final String ORDER_HEAD = "======Printing Orders======\n";
+    final String SALSES_TAX = "Sales Tax";
+    final String TOTAL_AMOUNT = "Total Amount";
 
     public OrderReceipt(Order o) {
         this.o = o;
@@ -18,7 +22,7 @@ public class OrderReceipt {
     public String printReceipt() {
         StringBuilder output = new StringBuilder();
 
-        output.append("======Printing Orders======\n");
+        output.append(ORDER_HEAD);
 
         output.append(o.getCustomerName());
         output.append(o.getCustomerAddress());
@@ -35,15 +39,15 @@ public class OrderReceipt {
             output.append(lineItem.totalAmount());
             output.append('\n');
 
-            double salesTax = lineItem.totalAmount() * .10;
+            double salesTax = lineItem.totalAmount() * SALES_TAX_RATE;
             totSalesTx += salesTax;
 
             tot += lineItem.totalAmount() + salesTax;
         }
 
-        output.append("Sales Tax").append('\t').append(totSalesTx);
+        output.append(SALSES_TAX).append('\t').append(totSalesTx);
 
-        output.append("Total Amount").append('\t').append(tot);
+        output.append(TOTAL_AMOUNT).append('\t').append(tot);
         return output.toString();
     }
 }
