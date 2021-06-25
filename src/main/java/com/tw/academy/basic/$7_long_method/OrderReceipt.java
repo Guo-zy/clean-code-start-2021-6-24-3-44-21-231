@@ -9,7 +9,6 @@ package com.tw.academy.basic.$7_long_method;
  */
 public class OrderReceipt {
     private final Order order;
-    final double SALES_TAX_RATE = 0.1d;
     final String ORDER_HEAD = "======Printing Orders======\n";
     final String SALSES_TAX = "Sales Tax";
     final String TOTAL_AMOUNT = "Total Amount";
@@ -19,15 +18,11 @@ public class OrderReceipt {
     }
 
     public String printReceipt() {
-        StringBuilder receiptDetails = new StringBuilder();
-
-        receiptDetails.append(ORDER_HEAD);
-
-        receiptDetails.append(order.getCustomerName());
-        receiptDetails.append(order.getCustomerAddress());
-        receiptDetails.append(order.generateOrderDetail());
-        receiptDetails.append(SALSES_TAX).append('\t').append(order.getOrderTotalSalesTax());
-        receiptDetails.append(TOTAL_AMOUNT).append('\t').append(order.getOrderTotalAmount());
-        return receiptDetails.toString();
+        return ORDER_HEAD +
+                order.getCustomerName() +
+                order.getCustomerAddress() +
+                order.generateOrderDetail() +
+                SALSES_TAX + '\t' + order.getOrderTotalSalesTax() +
+                TOTAL_AMOUNT + '\t' + order.getOrderTotalAmount();
     }
 }

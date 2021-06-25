@@ -22,9 +22,6 @@ public class Order {
         return address;
     }
 
-    public List<LineItem> getLineItems() {
-        return lineItems;
-    }
 
     public String generateOrderDetail(){
         return lineItems.stream().map(LineItem::generateItemDetail).collect(Collectors.joining());
