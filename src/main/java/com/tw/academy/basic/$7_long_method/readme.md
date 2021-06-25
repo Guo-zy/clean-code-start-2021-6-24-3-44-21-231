@@ -5,3 +5,4 @@ refactor step:
     4. extract append order detail, add generateOrderDetail function and generateItemDetail function
     5. remove for loop, add init getSalesTax and getTotalAmount in order class and lineItem class.
     6. remove receiptDetails and constants SALES_TAX_RATE in OrderReceipt class.
+    7. extract constants of '\t' and '\n'.

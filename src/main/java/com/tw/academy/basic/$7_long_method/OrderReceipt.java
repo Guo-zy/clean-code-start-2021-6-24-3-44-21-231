@@ -12,6 +12,7 @@ public class OrderReceipt {
     final String ORDER_HEAD = "======Printing Orders======\n";
     final String SALSES_TAX = "Sales Tax";
     final String TOTAL_AMOUNT = "Total Amount";
+    final String TAB = "\t";
 
     public OrderReceipt(Order order) {
         this.order = order;
@@ -22,7 +23,7 @@ public class OrderReceipt {
                 order.getCustomerName() +
                 order.getCustomerAddress() +
                 order.generateOrderDetail() +
-                SALSES_TAX + '\t' + order.getOrderTotalSalesTax() +
-                TOTAL_AMOUNT + '\t' + order.getOrderTotalAmount();
+                SALSES_TAX + TAB + order.getOrderTotalSalesTax() +
+                TOTAL_AMOUNT + TAB + order.getOrderTotalAmount();
     }
 }
