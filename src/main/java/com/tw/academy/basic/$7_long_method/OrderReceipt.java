@@ -8,7 +8,7 @@ package com.tw.academy.basic.$7_long_method;
  * @since   2018-1-1
  */
 public class OrderReceipt {
-    private Order order;
+    private final Order order;
     final double SALES_TAX_RATE = 0.1d;
     final String ORDER_HEAD = "======Printing Orders======\n";
     final String SALSES_TAX = "Sales Tax";
