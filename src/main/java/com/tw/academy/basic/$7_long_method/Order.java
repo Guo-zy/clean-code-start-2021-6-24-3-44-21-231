@@ -1,6 +1,7 @@
 package com.tw.academy.basic.$7_long_method;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Order {
     String customerName;
@@ -23,5 +24,9 @@ public class Order {
 
     public List<LineItem> getLineItems() {
         return lineItems;
+    }
+
+    public String generateOrderDetail(){
+        return lineItems.stream().map(LineItem::generateItemDetail).collect(Collectors.joining());
     }
 }
