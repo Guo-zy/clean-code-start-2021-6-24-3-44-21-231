@@ -4,6 +4,7 @@ public class LineItem {
 	private String description;
 	private double price;
 	private int quantity;
+	private final double SALES_TAX_RATE = 0.1d;
 
 	public LineItem(String description, double p, int quantity) {
 		super();
@@ -30,6 +31,12 @@ public class LineItem {
 
     public String generateItemDetail(){
 		return getDescription() + "\t" + getPrice() + "\t" +  getQuantity() + "\t" + totalAmount() +  "\n";
+	}
+	public double getItemSalesTax(){
+		return totalAmount() * SALES_TAX_RATE;
+	}
+	public double getItemTotalAmount(){
+		return totalAmount() + getItemSalesTax();
 	}
 
 }

@@ -29,4 +29,12 @@ public class Order {
     public String generateOrderDetail(){
         return lineItems.stream().map(LineItem::generateItemDetail).collect(Collectors.joining());
     }
+
+    public double getOrderTotalAmount(){
+        return lineItems.stream().mapToDouble(LineItem::getItemTotalAmount).sum();
+    }
+
+    public double getOrderTotalSalesTax(){
+        return lineItems.stream().mapToDouble(LineItem::getItemSalesTax).sum();
+    }
 }

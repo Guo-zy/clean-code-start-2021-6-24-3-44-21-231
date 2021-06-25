@@ -3,3 +3,4 @@ refactor step:
     2. extract constants(clean magic_number)
     3. rename variables and delete todo annotation
     4. extract append order detail, add generateOrderDetail function and generateItemDetail function
+    5. remove for loop, add init getSalesTax and getTotalAmount in order class and lineItem class.
